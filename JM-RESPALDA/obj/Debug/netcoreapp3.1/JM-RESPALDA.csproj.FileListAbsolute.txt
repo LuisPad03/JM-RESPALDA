@@ -1,0 +1,16 @@
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.exe
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.deps.json
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.runtimeconfig.json
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.runtimeconfig.dev.json
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.dll
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\bin\Debug\netcoreapp3.1\JM-RESPALDA.pdb
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM_RESPALDA.JM_RESPALDA.resources
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM_RESPALDA.Properties.Resources.resources
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.csproj.GenerateResource.cache
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.GeneratedMSBuildEditorConfig.editorconfig
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.AssemblyInfoInputs.cache
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.AssemblyInfo.cs
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.csproj.CoreCompileInputs.cache
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.dll
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.pdb
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.genruntimeconfig.cache
