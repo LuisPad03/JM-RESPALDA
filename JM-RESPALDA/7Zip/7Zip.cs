@@ -8,13 +8,28 @@ public class _7Zip
 {
     public string ruta7zip = "";
     public string error = string.Empty;
-    public string ruta = string.Empty;
 
     public _7Zip()
     {
-        ruta = Environment.CurrentDirectory;
-        if (Environment.Is64BitOperatingSystem) ruta7zip = "";
-        else ruta7zip = "";
+        //string carpeta7zip = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7Zip\\x64\\7z.exe");
+
+        //string dirName = AppDomain.CurrentDomain.BaseDirectory; // Starting Dir
+        //FileInfo fileInfo = new FileInfo(dirName);
+        //DirectoryInfo parentDir = fileInfo.Directory.Parent;
+        //string parentDirName = parentDir.FullName; // Parent of Starting Dir
+        //FileInfo fileInfo2 = new FileInfo(parentDirName);
+        //DirectoryInfo parentDir2 = fileInfo2.Directory.Parent;
+        //string parentDirName2 = parentDir2.FullName; // Parent of Starting Dir
+
+        //string path = (new FileInfo(AppDomain.CurrentDomain.BaseDirectory)).Directory.Parent.FullName;
+
+        //string fullimagepath = Path.Combine(Application.StartupPath, "7Zip\\x64\\7z.exe");
+
+        ruta7zip = @"E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\7Zip\x64\7z.exe";
+
+        //if (Environment.Is64BitOperatingSystem) ruta7zip = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7Zip\\x64\\7z.exe");
+        //else ruta7zip = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "7Zip\\x86\\7z.exe");
+
     }
 
     public bool ComprimeCarpeta(string carpetaComprimir, string carpetaDestino, int nivelCompresion)

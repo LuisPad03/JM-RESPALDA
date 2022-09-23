@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,10 @@ namespace JM_RESPALDA
         private void JM_RESPALDA_Load(object sender, EventArgs e)
         {
             _7Zip ruta7zip = new _7Zip();
-            txt_name.Text = ruta7zip.ruta;
+
+            txt_origen.Text = ruta7zip.ruta7zip;
+            
         }
+        
     }
 }

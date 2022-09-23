@@ -35,16 +35,17 @@ namespace JM_RESPALDA
             this.iconrestaurar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chb_martes = new System.Windows.Forms.CheckBox();
+            this.chb_lunes = new System.Windows.Forms.CheckBox();
+            this.chb_miercoles = new System.Windows.Forms.CheckBox();
+            this.chb_domingo = new System.Windows.Forms.CheckBox();
+            this.chb_jueves = new System.Windows.Forms.CheckBox();
+            this.chb_sabado = new System.Windows.Forms.CheckBox();
+            this.chb_viernes = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbx_dia = new System.Windows.Forms.ComboBox();
             this.cbx_periodicidad = new System.Windows.Forms.ComboBox();
-            this.chb_domingo = new System.Windows.Forms.CheckBox();
-            this.chb_sabado = new System.Windows.Forms.CheckBox();
-            this.chb_viernes = new System.Windows.Forms.CheckBox();
-            this.chb_jueves = new System.Windows.Forms.CheckBox();
-            this.chb_miercoles = new System.Windows.Forms.CheckBox();
-            this.chb_martes = new System.Windows.Forms.CheckBox();
-            this.chb_lunes = new System.Windows.Forms.CheckBox();
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_num_dia = new System.Windows.Forms.Label();
             this.lbl_periodicidad = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@ namespace JM_RESPALDA
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -115,16 +117,10 @@ namespace JM_RESPALDA
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.cbx_dia);
             this.panel3.Controls.Add(this.cbx_periodicidad);
-            this.panel3.Controls.Add(this.chb_domingo);
-            this.panel3.Controls.Add(this.chb_sabado);
-            this.panel3.Controls.Add(this.chb_viernes);
-            this.panel3.Controls.Add(this.chb_jueves);
-            this.panel3.Controls.Add(this.chb_miercoles);
-            this.panel3.Controls.Add(this.chb_martes);
-            this.panel3.Controls.Add(this.chb_lunes);
             this.panel3.Controls.Add(this.lbl_hora);
             this.panel3.Controls.Add(this.lbl_num_dia);
             this.panel3.Controls.Add(this.lbl_periodicidad);
@@ -138,92 +134,31 @@ namespace JM_RESPALDA
             this.panel3.Controls.Add(this.btn_iniciar);
             this.panel3.Controls.Add(this.btn_guardar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(378, 42);
+            this.panel3.Location = new System.Drawing.Point(309, 42);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(308, 317);
+            this.panel3.Size = new System.Drawing.Size(377, 283);
             this.panel3.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // groupBox1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(59, 229);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
-            // 
-            // cbx_dia
-            // 
-            this.cbx_dia.FormattingEnabled = true;
-            this.cbx_dia.Location = new System.Drawing.Point(59, 200);
-            this.cbx_dia.Name = "cbx_dia";
-            this.cbx_dia.Size = new System.Drawing.Size(95, 21);
-            this.cbx_dia.TabIndex = 10;
-            // 
-            // cbx_periodicidad
-            // 
-            this.cbx_periodicidad.FormattingEnabled = true;
-            this.cbx_periodicidad.Location = new System.Drawing.Point(85, 92);
-            this.cbx_periodicidad.Name = "cbx_periodicidad";
-            this.cbx_periodicidad.Size = new System.Drawing.Size(101, 21);
-            this.cbx_periodicidad.TabIndex = 10;
-            // 
-            // chb_domingo
-            // 
-            this.chb_domingo.AutoSize = true;
-            this.chb_domingo.Location = new System.Drawing.Point(192, 166);
-            this.chb_domingo.Name = "chb_domingo";
-            this.chb_domingo.Size = new System.Drawing.Size(68, 17);
-            this.chb_domingo.TabIndex = 9;
-            this.chb_domingo.Text = "Domingo";
-            this.chb_domingo.UseVisualStyleBackColor = true;
-            // 
-            // chb_sabado
-            // 
-            this.chb_sabado.AutoSize = true;
-            this.chb_sabado.Location = new System.Drawing.Point(123, 166);
-            this.chb_sabado.Name = "chb_sabado";
-            this.chb_sabado.Size = new System.Drawing.Size(63, 17);
-            this.chb_sabado.TabIndex = 9;
-            this.chb_sabado.Text = "Sabado";
-            this.chb_sabado.UseVisualStyleBackColor = true;
-            // 
-            // chb_viernes
-            // 
-            this.chb_viernes.AutoSize = true;
-            this.chb_viernes.Location = new System.Drawing.Point(56, 166);
-            this.chb_viernes.Name = "chb_viernes";
-            this.chb_viernes.Size = new System.Drawing.Size(61, 17);
-            this.chb_viernes.TabIndex = 9;
-            this.chb_viernes.Text = "Viernes";
-            this.chb_viernes.UseVisualStyleBackColor = true;
-            // 
-            // chb_jueves
-            // 
-            this.chb_jueves.AutoSize = true;
-            this.chb_jueves.Location = new System.Drawing.Point(226, 137);
-            this.chb_jueves.Name = "chb_jueves";
-            this.chb_jueves.Size = new System.Drawing.Size(60, 17);
-            this.chb_jueves.TabIndex = 9;
-            this.chb_jueves.Text = "Jueves";
-            this.chb_jueves.UseVisualStyleBackColor = true;
-            // 
-            // chb_miercoles
-            // 
-            this.chb_miercoles.AutoSize = true;
-            this.chb_miercoles.Location = new System.Drawing.Point(149, 137);
-            this.chb_miercoles.Name = "chb_miercoles";
-            this.chb_miercoles.Size = new System.Drawing.Size(71, 17);
-            this.chb_miercoles.TabIndex = 9;
-            this.chb_miercoles.Text = "Miercoles";
-            this.chb_miercoles.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.chb_martes);
+            this.groupBox1.Controls.Add(this.chb_lunes);
+            this.groupBox1.Controls.Add(this.chb_miercoles);
+            this.groupBox1.Controls.Add(this.chb_domingo);
+            this.groupBox1.Controls.Add(this.chb_jueves);
+            this.groupBox1.Controls.Add(this.chb_sabado);
+            this.groupBox1.Controls.Add(this.chb_viernes);
+            this.groupBox1.Location = new System.Drawing.Point(18, 123);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(329, 71);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Día(s)";
             // 
             // chb_martes
             // 
             this.chb_martes.AutoSize = true;
-            this.chb_martes.Location = new System.Drawing.Point(85, 137);
+            this.chb_martes.Location = new System.Drawing.Point(90, 19);
             this.chb_martes.Name = "chb_martes";
             this.chb_martes.Size = new System.Drawing.Size(58, 17);
             this.chb_martes.TabIndex = 9;
@@ -233,17 +168,133 @@ namespace JM_RESPALDA
             // chb_lunes
             // 
             this.chb_lunes.AutoSize = true;
-            this.chb_lunes.Location = new System.Drawing.Point(24, 137);
+            this.chb_lunes.Location = new System.Drawing.Point(29, 19);
             this.chb_lunes.Name = "chb_lunes";
             this.chb_lunes.Size = new System.Drawing.Size(55, 17);
             this.chb_lunes.TabIndex = 9;
             this.chb_lunes.Text = "Lunes";
             this.chb_lunes.UseVisualStyleBackColor = true;
             // 
+            // chb_miercoles
+            // 
+            this.chb_miercoles.AutoSize = true;
+            this.chb_miercoles.Location = new System.Drawing.Point(154, 19);
+            this.chb_miercoles.Name = "chb_miercoles";
+            this.chb_miercoles.Size = new System.Drawing.Size(71, 17);
+            this.chb_miercoles.TabIndex = 9;
+            this.chb_miercoles.Text = "Miercoles";
+            this.chb_miercoles.UseVisualStyleBackColor = true;
+            // 
+            // chb_domingo
+            // 
+            this.chb_domingo.AutoSize = true;
+            this.chb_domingo.Location = new System.Drawing.Point(197, 48);
+            this.chb_domingo.Name = "chb_domingo";
+            this.chb_domingo.Size = new System.Drawing.Size(68, 17);
+            this.chb_domingo.TabIndex = 9;
+            this.chb_domingo.Text = "Domingo";
+            this.chb_domingo.UseVisualStyleBackColor = true;
+            // 
+            // chb_jueves
+            // 
+            this.chb_jueves.AutoSize = true;
+            this.chb_jueves.Location = new System.Drawing.Point(231, 19);
+            this.chb_jueves.Name = "chb_jueves";
+            this.chb_jueves.Size = new System.Drawing.Size(60, 17);
+            this.chb_jueves.TabIndex = 9;
+            this.chb_jueves.Text = "Jueves";
+            this.chb_jueves.UseVisualStyleBackColor = true;
+            // 
+            // chb_sabado
+            // 
+            this.chb_sabado.AutoSize = true;
+            this.chb_sabado.Location = new System.Drawing.Point(128, 48);
+            this.chb_sabado.Name = "chb_sabado";
+            this.chb_sabado.Size = new System.Drawing.Size(63, 17);
+            this.chb_sabado.TabIndex = 9;
+            this.chb_sabado.Text = "Sabado";
+            this.chb_sabado.UseVisualStyleBackColor = true;
+            // 
+            // chb_viernes
+            // 
+            this.chb_viernes.AutoSize = true;
+            this.chb_viernes.Location = new System.Drawing.Point(61, 48);
+            this.chb_viernes.Name = "chb_viernes";
+            this.chb_viernes.Size = new System.Drawing.Size(61, 17);
+            this.chb_viernes.TabIndex = 9;
+            this.chb_viernes.Text = "Viernes";
+            this.chb_viernes.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(57, 204);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.Value = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
+            // 
+            // cbx_dia
+            // 
+            this.cbx_dia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_dia.FormattingEnabled = true;
+            this.cbx_dia.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.cbx_dia.Location = new System.Drawing.Point(243, 92);
+            this.cbx_dia.Name = "cbx_dia";
+            this.cbx_dia.Size = new System.Drawing.Size(102, 21);
+            this.cbx_dia.TabIndex = 10;
+            // 
+            // cbx_periodicidad
+            // 
+            this.cbx_periodicidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_periodicidad.FormattingEnabled = true;
+            this.cbx_periodicidad.Items.AddRange(new object[] {
+            "Diario",
+            "Semanal",
+            "Mensual",
+            "Personalizado"});
+            this.cbx_periodicidad.Location = new System.Drawing.Point(85, 92);
+            this.cbx_periodicidad.Name = "cbx_periodicidad";
+            this.cbx_periodicidad.Size = new System.Drawing.Size(101, 21);
+            this.cbx_periodicidad.TabIndex = 10;
+            // 
             // lbl_hora
             // 
             this.lbl_hora.AutoSize = true;
-            this.lbl_hora.Location = new System.Drawing.Point(18, 235);
+            this.lbl_hora.Location = new System.Drawing.Point(18, 208);
             this.lbl_hora.Name = "lbl_hora";
             this.lbl_hora.Size = new System.Drawing.Size(33, 13);
             this.lbl_hora.TabIndex = 7;
@@ -252,7 +303,7 @@ namespace JM_RESPALDA
             // lbl_num_dia
             // 
             this.lbl_num_dia.AutoSize = true;
-            this.lbl_num_dia.Location = new System.Drawing.Point(18, 203);
+            this.lbl_num_dia.Location = new System.Drawing.Point(209, 95);
             this.lbl_num_dia.Name = "lbl_num_dia";
             this.lbl_num_dia.Size = new System.Drawing.Size(28, 13);
             this.lbl_num_dia.TabIndex = 6;
@@ -280,14 +331,14 @@ namespace JM_RESPALDA
             // 
             this.txt_destino.Location = new System.Drawing.Point(85, 66);
             this.txt_destino.Name = "txt_destino";
-            this.txt_destino.Size = new System.Drawing.Size(199, 20);
+            this.txt_destino.Size = new System.Drawing.Size(262, 20);
             this.txt_destino.TabIndex = 3;
             // 
             // txt_origen
             // 
             this.txt_origen.Location = new System.Drawing.Point(85, 41);
             this.txt_origen.Name = "txt_origen";
-            this.txt_origen.Size = new System.Drawing.Size(199, 20);
+            this.txt_origen.Size = new System.Drawing.Size(262, 20);
             this.txt_origen.TabIndex = 3;
             // 
             // txt_name
@@ -295,7 +346,7 @@ namespace JM_RESPALDA
             this.txt_name.BackColor = System.Drawing.SystemColors.Window;
             this.txt_name.Location = new System.Drawing.Point(85, 13);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(199, 20);
+            this.txt_name.Size = new System.Drawing.Size(262, 20);
             this.txt_name.TabIndex = 3;
             // 
             // lbl_origen
@@ -320,7 +371,7 @@ namespace JM_RESPALDA
             // 
             this.btn_detener.Enabled = false;
             this.btn_detener.FlatAppearance.BorderSize = 0;
-            this.btn_detener.Location = new System.Drawing.Point(209, 277);
+            this.btn_detener.Location = new System.Drawing.Point(270, 244);
             this.btn_detener.Name = "btn_detener";
             this.btn_detener.Size = new System.Drawing.Size(75, 23);
             this.btn_detener.TabIndex = 0;
@@ -332,7 +383,7 @@ namespace JM_RESPALDA
             this.btn_iniciar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_iniciar.Enabled = false;
             this.btn_iniciar.FlatAppearance.BorderSize = 0;
-            this.btn_iniciar.Location = new System.Drawing.Point(128, 277);
+            this.btn_iniciar.Location = new System.Drawing.Point(189, 244);
             this.btn_iniciar.Name = "btn_iniciar";
             this.btn_iniciar.Size = new System.Drawing.Size(75, 23);
             this.btn_iniciar.TabIndex = 0;
@@ -343,7 +394,7 @@ namespace JM_RESPALDA
             // 
             this.btn_guardar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_guardar.Location = new System.Drawing.Point(47, 277);
+            this.btn_guardar.Location = new System.Drawing.Point(108, 244);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(75, 23);
             this.btn_guardar.TabIndex = 0;
@@ -354,9 +405,10 @@ namespace JM_RESPALDA
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 317);
+            this.panel1.Size = new System.Drawing.Size(309, 283);
             this.panel1.TabIndex = 3;
             // 
             // JM_RESPALDA
@@ -364,7 +416,7 @@ namespace JM_RESPALDA
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(686, 359);
+            this.ClientSize = new System.Drawing.Size(686, 325);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.BarraTitulo);
@@ -382,6 +434,8 @@ namespace JM_RESPALDA
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -416,6 +470,7 @@ namespace JM_RESPALDA
         private System.Windows.Forms.ComboBox cbx_dia;
         private System.Windows.Forms.ComboBox cbx_periodicidad;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
