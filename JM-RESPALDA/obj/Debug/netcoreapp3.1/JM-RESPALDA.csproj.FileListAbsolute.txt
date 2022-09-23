@@ -14,3 +14,4 @@ E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.cspr
 E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.dll
 E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.pdb
 E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.genruntimeconfig.cache
+E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\obj\Debug\netcoreapp3.1\JM-RESPALDA.csproj.AssemblyReference.cache

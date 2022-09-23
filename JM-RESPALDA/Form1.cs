@@ -17,5 +17,10 @@ namespace JM_RESPALDA
             InitializeComponent();
         }
 
+        private void JM_RESPALDA_Load(object sender, EventArgs e)
+        {
+            _7Zip ruta7zip = new _7Zip();
+            txt_name.Text = ruta7zip.ruta;
+        }
     }
 }

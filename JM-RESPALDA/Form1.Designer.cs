@@ -354,10 +354,9 @@ namespace JM_RESPALDA
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(378, 317);
+            this.panel1.Size = new System.Drawing.Size(338, 317);
             this.panel1.TabIndex = 3;
             // 
             // JM_RESPALDA
@@ -376,6 +375,7 @@ namespace JM_RESPALDA
             this.Name = "JM_RESPALDA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JM-RESPALDA";
+            this.Load += new System.EventHandler(this.JM_RESPALDA_Load);
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
