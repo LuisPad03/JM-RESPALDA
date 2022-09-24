@@ -19,7 +19,11 @@ namespace JM_RESPALDA
 {
     public partial class JM_RESPALDA : Form
     {
-        FolderBrowserDialog buscaCarpeta = new FolderBrowserDialog();
+        private FolderBrowserDialog buscaCarpeta = new FolderBrowserDialog();
+        private DataSet dsJMRespalda = new DataSet();
+        private DataTable dtBackUp = new DataTable();
+        private readonly string xmlRespaldos = "JM-Respalda.xml";
+
         string archivoip = Application.StartupPath + "\\GuardaIP.txt";
         string archivoxml2 = Application.StartupPath + "\\MDatos.xml";
         string subkey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
@@ -32,9 +36,38 @@ namespace JM_RESPALDA
 
         private void JM_RESPALDA_Load(object sender, EventArgs e)
         {
-            _7Zip ruta7zip = new _7Zip();
+            CreaEstructuraDs();
 
-            txt_name.Text = ruta7zip.ruta7zip;
+            bool fileExist = File.Exists(xmlRespaldos);
+            if (!fileExist) dsJMRespalda.WriteXml(xmlRespaldos);
+
+            dsJMRespalda.ReadXml(xmlRespaldos, XmlReadMode.ReadSchema);
+
+            dataGridView1.DataSource = dsJMRespalda;
+            dataGridView1.DataMember = "BackUp";
+
+            //_7Zip ruta7zip = new _7Zip();
+            //txt_name.Text = ruta7zip.ruta7zip;
+        }
+        private void CreaEstructuraDs()
+        {
+            dsJMRespalda.DataSetName = "JM-RESPALDA";
+            dtBackUp.TableName = "BackUp";
+            dsJMRespalda.Tables.Add(dtBackUp);
+            dtBackUp.Columns.Add("ID", typeof(int));
+            dtBackUp.Columns.Add("Nombre", typeof(string));
+            dtBackUp.Columns.Add("Origen", typeof(string));
+            dtBackUp.Columns.Add("Destino", typeof(string));
+            dtBackUp.Columns.Add("Periodicidad", typeof(string));
+            dtBackUp.Columns.Add("DiaMes", typeof(int));
+            dtBackUp.Columns.Add("Lunes", typeof(bool));
+            dtBackUp.Columns.Add("Martes", typeof(bool));
+            dtBackUp.Columns.Add("Miercoles", typeof(bool));
+            dtBackUp.Columns.Add("Jueves", typeof(bool));
+            dtBackUp.Columns.Add("Viernes", typeof(bool));
+            dtBackUp.Columns.Add("Sabado", typeof(bool));
+            dtBackUp.Columns.Add("Domingo", typeof(bool));
+            dtBackUp.Columns.Add("Hora", typeof(string));
         }
 
         #region Movimiento a la barra det titulo
@@ -97,27 +130,27 @@ namespace JM_RESPALDA
             switch (cbx_periodicidad.Text)
             {
                 case "Diario":
-                    groupBox_Dias(false, true, false);
+                    groupBox_Dias(false, true, false, true);
                     break;
                 case "Semanal":
-                    groupBox_Dias(true, false, false);
+                    groupBox_Dias(true, false, false, true);
                     break;
                 case "Mensual":
-                    groupBox_Dias(false, false, true);
+                    groupBox_Dias(false, false, true, true);
                     break;
                 case "Unica vez":
-                    groupBox_Dias(false, false, false);
+                    groupBox_Dias(false, false, false, false);
                     groupBox1.Enabled = false;
                     break;
                 case "Personalizado":
-                    groupBox_Dias(true, false, false);
+                    groupBox_Dias(true, false, false, true);
                     break;
                 default:
-                    groupBox_Dias(true, false, false);
+                    groupBox_Dias(true, false, false, false);
                     break;
             }
         }
-        private void groupBox_Dias(bool habilitar, bool check, bool cbxDia)
+        private void groupBox_Dias(bool habilitar, bool check, bool cbxDia, bool btnGuardar)
         {
             chb_lunes.Checked = check;
             chb_lunes.Enabled = habilitar;
@@ -139,6 +172,8 @@ namespace JM_RESPALDA
             cbx_dia.SelectedIndex = 0;
 
             groupBox1.Enabled = !cbxDia;
+
+            btn_guardar.Enabled = btnGuardar;
         }
 
         private void checkBox_Click(object sender, EventArgs e)
@@ -156,5 +191,19 @@ namespace JM_RESPALDA
             chb_sabado.Checked = chb_sabado.Text.Contains(habilita) ? true : false;
             chb_domingo.Checked = chb_domingo.Text.Contains(habilita) ? true : false;
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            int idRespaldo = dtBackUp.Rows.Count + 1, diames = int.Parse(cbx_dia.Text);
+            string nombre = txt_name.Text, origen = txt_origen.Text, destino = txt_destino.Text, periodicidad = cbx_periodicidad.Text, hora = dateTimePicker1.Text;
+
+            dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
+
+            dsJMRespalda.WriteXml(xmlRespaldos);
+        }
+
+        
+
+
     }
 }
