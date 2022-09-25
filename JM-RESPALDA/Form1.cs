@@ -46,6 +46,8 @@ namespace JM_RESPALDA
             dataGridView1.DataSource = dsJMRespalda;
             dataGridView1.DataMember = "BackUp";
 
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Uighur", 18F, FontStyle.Regular);
+            
             //_7Zip ruta7zip = new _7Zip();
             //txt_name.Text = ruta7zip.ruta7zip;
         }

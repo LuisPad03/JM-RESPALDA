@@ -1,2 +1,51 @@
 <?xml version="1.0" standalone="yes"?>
-<JM-RESPALDA />
+<JM-RESPALDA>
+  <BackUp>
+    <ID>1</ID>
+    <Nombre>primer ejemplo</Nombre>
+    <Origen>C:\Users\luis\Downloads\programas</Origen>
+    <Destino>C:\Users\luis\Downloads\programas</Destino>
+    <Periodicidad>Diario</Periodicidad>
+    <DiaMes>1</DiaMes>
+    <Lunes>true</Lunes>
+    <Martes>true</Martes>
+    <Miercoles>true</Miercoles>
+    <Jueves>true</Jueves>
+    <Viernes>true</Viernes>
+    <Sabado>true</Sabado>
+    <Domingo>true</Domingo>
+    <Hora>12:00:00 a. m.</Hora>
+  </BackUp>
+  <BackUp>
+    <ID>2</ID>
+    <Nombre>segundo registro</Nombre>
+    <Origen>C:\Users\luis\Downloads\programas</Origen>
+    <Destino>C:\Users\luis\Downloads\programas</Destino>
+    <Periodicidad>Mensual</Periodicidad>
+    <DiaMes>1</DiaMes>
+    <Lunes>false</Lunes>
+    <Martes>false</Martes>
+    <Miercoles>false</Miercoles>
+    <Jueves>false</Jueves>
+    <Viernes>false</Viernes>
+    <Sabado>false</Sabado>
+    <Domingo>false</Domingo>
+    <Hora>12:00:00 a. m.</Hora>
+  </BackUp>
+  <BackUp>
+    <ID>3</ID>
+    <Nombre>tercer registro</Nombre>
+    <Origen>C:\Users\luis\Downloads\programas</Origen>
+    <Destino>C:\Users\luis\Downloads\programas</Destino>
+    <Periodicidad>Semanal</Periodicidad>
+    <DiaMes>1</DiaMes>
+    <Lunes>true</Lunes>
+    <Martes>false</Martes>
+    <Miercoles>false</Miercoles>
+    <Jueves>false</Jueves>
+    <Viernes>false</Viernes>
+    <Sabado>false</Sabado>
+    <Domingo>false</Domingo>
+    <Hora>12:00:00 a. m.</Hora>
+  </BackUp>
+</JM-RESPALDA>
