@@ -200,27 +200,18 @@ namespace JM_RESPALDA
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                string ID = dataGridView1.SelectedRows[0].Cells[0].Value + string.Empty;
-                string Nombre = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
-                string Origen = dataGridView1.SelectedRows[0].Cells[2].Value + string.Empty;
-                string Destino = dataGridView1.SelectedRows[0].Cells[3].Value + string.Empty;
-                string Periodicidad = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
-                string DiaMes = dataGridView1.SelectedRows[0].Cells[5].Value + string.Empty;
-                string Lunes = dataGridView1.SelectedRows[0].Cells[6].Value + string.Empty;
-                string Martes = dataGridView1.SelectedRows[0].Cells[7].Value + string.Empty;
-                string Miercoles = dataGridView1.SelectedRows[0].Cells[8].Value + string.Empty;
-                string Jueves = dataGridView1.SelectedRows[0].Cells[9].Value + string.Empty;
-                string Viernes = dataGridView1.SelectedRows[0].Cells[10].Value + string.Empty;
-                string Sabado = dataGridView1.SelectedRows[0].Cells[11].Value + string.Empty;
-                string Domingo = dataGridView1.SelectedRows[0].Cells[12].Value + string.Empty;
-                string Hora = dataGridView1.SelectedRows[0].Cells[13].Value + string.Empty;
+                string[] datosFila = new string[14];
+                for(int i=0; i < 14; i++)
+                {
+                    datosFila[i] = dataGridView1.SelectedRows[0].Cells[i].Value + string.Empty;
+                }
 
-                lbl_id.Text = ID;
-                txt_name.Text = Nombre;
-                txt_origen.Text = Origen;
-                txt_destino.Text = Destino;
-                cbx_periodicidad.Text = Periodicidad;
-                switch (Periodicidad)
+                lbl_id.Text = datosFila[0];
+                txt_name.Text = datosFila[1];
+                txt_origen.Text = datosFila[2];
+                txt_destino.Text = datosFila[3];
+                cbx_periodicidad.Text = datosFila[4];
+                switch (datosFila[4])
                 {
                     case "Diario":
                         groupBox_Dias(false, true, false, true);
@@ -242,14 +233,14 @@ namespace JM_RESPALDA
                         groupBox_Dias(true, false, false, false);
                         break;
                 }
-                cbx_dia.Text = DiaMes;
-                chb_lunes.Checked = Lunes.Contains("True") ? true : false;
-                chb_martes.Checked = Martes.Contains("True") ? true : false;
-                chb_miercoles.Checked = Miercoles.Contains("True") ? true : false;
-                chb_jueves.Checked = Jueves.Contains("True") ? true : false;
-                chb_viernes.Checked = Viernes.Contains("True") ? true : false;
-                chb_sabado.Checked = Sabado.Contains("True") ? true : false;
-                chb_domingo.Checked = Domingo.Contains("True") ? true : false;
+                cbx_dia.Text = datosFila[5];
+                chb_lunes.Checked = datosFila[6].Contains("True") ? true : false;
+                chb_martes.Checked = datosFila[7].Contains("True") ? true : false;
+                chb_miercoles.Checked = datosFila[8].Contains("True") ? true : false;
+                chb_jueves.Checked = datosFila[9].Contains("True") ? true : false;
+                chb_viernes.Checked = datosFila[10].Contains("True") ? true : false;
+                chb_sabado.Checked = datosFila[11].Contains("True") ? true : false;
+                chb_domingo.Checked = datosFila[12].Contains("True") ? true : false;
                 //HORA
 
             }
@@ -264,6 +255,23 @@ namespace JM_RESPALDA
 
             if (int.Parse(lbl_id.Text) == 0) dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
             //modificar datos de una FILA en un DATATABLE
+            else
+            {
+                idRespaldo = int.Parse(lbl_id.Text);
+                dtBackUp.Rows[idRespaldo - 1]["Nombre"] = nombre;
+                dtBackUp.Rows[idRespaldo - 1]["Origen"] = origen;
+                dtBackUp.Rows[idRespaldo - 1]["Destino"] = destino;
+                dtBackUp.Rows[idRespaldo - 1]["Periodicidad"] = periodicidad;
+                dtBackUp.Rows[idRespaldo - 1]["DiaMes"] = diames;
+                dtBackUp.Rows[idRespaldo - 1]["Lunes"] = chb_lunes.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Martes"] = chb_martes.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Miercoles"] = chb_miercoles.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Jueves"] = chb_jueves.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Viernes"] = chb_viernes.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Sabado"] = chb_sabado.Checked;
+                dtBackUp.Rows[idRespaldo - 1]["Domingo"] = chb_domingo.Checked;
+                //dtBackUp.Rows[idRespaldo - 1]["Hora"] = "cde";
+            }
 
             dsJMRespalda.WriteXml(xmlRespaldos);
         }
