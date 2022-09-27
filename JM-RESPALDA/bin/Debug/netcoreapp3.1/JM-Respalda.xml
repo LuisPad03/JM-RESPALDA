@@ -51,17 +51,17 @@
   <BackUp>
     <ID>4</ID>
     <Nombre>cuarto registro</Nombre>
-    <Origen>C:\Users\luis\Downloads\programas</Origen>
-    <Destino>C:\Users\luis\Downloads\programas</Destino>
-    <Periodicidad>Mensual</Periodicidad>
-    <DiaMes>5</DiaMes>
-    <Lunes>false</Lunes>
-    <Martes>false</Martes>
-    <Miercoles>false</Miercoles>
-    <Jueves>false</Jueves>
-    <Viernes>false</Viernes>
-    <Sabado>false</Sabado>
-    <Domingo>false</Domingo>
+    <Origen>D:\Chipset(v3.10.22.706)</Origen>
+    <Destino>D:\FTP</Destino>
+    <Periodicidad>Diario</Periodicidad>
+    <DiaMes>0</DiaMes>
+    <Lunes>true</Lunes>
+    <Martes>true</Martes>
+    <Miercoles>true</Miercoles>
+    <Jueves>true</Jueves>
+    <Viernes>true</Viernes>
+    <Sabado>true</Sabado>
+    <Domingo>true</Domingo>
     <Hora>12:00:00 a. m.</Hora>
   </BackUp>
 </JM-RESPALDA>

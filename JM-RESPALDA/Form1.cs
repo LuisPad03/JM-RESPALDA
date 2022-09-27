@@ -247,30 +247,27 @@ namespace JM_RESPALDA
 
             btn_nuevo.Enabled = true;
         }
-
+        
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            int idRespaldo = dtBackUp.Rows.Count + 1, diames = int.Parse(cbx_dia.Text); //try parse diames
+            int idRespaldo = dtBackUp.Rows.Count + 1;
+            int diames; //try parse diames
+            bool bDiaMes = int.TryParse(cbx_dia.Text, out diames);
+
             string nombre = txt_name.Text, origen = txt_origen.Text, destino = txt_destino.Text, periodicidad = cbx_periodicidad.Text, hora = dateTimePicker1.Text;
 
             if (int.Parse(lbl_id.Text) == 0) dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
             //modificar datos de una FILA en un DATATABLE
             else
             {
+                string[] sColumnas = { "Nombre", "Origen", "Destino", "Periodicidad", "DiaMes", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo", "Hora" };
+                string[] vColumnas = {nombre, origen, destino, periodicidad, diames.ToString(), chb_lunes.Checked.ToString(), chb_martes.Checked.ToString(), chb_miercoles.Checked.ToString(), chb_jueves.Checked.ToString(), chb_viernes.Checked.ToString(), chb_sabado.Checked.ToString(), chb_domingo.Checked.ToString(), hora };
+
                 idRespaldo = int.Parse(lbl_id.Text);
-                dtBackUp.Rows[idRespaldo - 1]["Nombre"] = nombre;
-                dtBackUp.Rows[idRespaldo - 1]["Origen"] = origen;
-                dtBackUp.Rows[idRespaldo - 1]["Destino"] = destino;
-                dtBackUp.Rows[idRespaldo - 1]["Periodicidad"] = periodicidad;
-                dtBackUp.Rows[idRespaldo - 1]["DiaMes"] = diames;
-                dtBackUp.Rows[idRespaldo - 1]["Lunes"] = chb_lunes.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Martes"] = chb_martes.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Miercoles"] = chb_miercoles.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Jueves"] = chb_jueves.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Viernes"] = chb_viernes.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Sabado"] = chb_sabado.Checked;
-                dtBackUp.Rows[idRespaldo - 1]["Domingo"] = chb_domingo.Checked;
-                //dtBackUp.Rows[idRespaldo - 1]["Hora"] = "cde";
+                for (int i = 0; i < sColumnas.Length; i++)
+                {
+                    dtBackUp.Rows[idRespaldo - 1][sColumnas[i]] = vColumnas[i];
+                }
             }
 
             dsJMRespalda.WriteXml(xmlRespaldos);

@@ -1,3 +1,9 @@
 is_global = true
+build_property.ApplicationManifest = 
+build_property.StartupObject = 
+build_property.ApplicationDefaultFont = 
+build_property.ApplicationHighDpiMode = 
+build_property.ApplicationUseCompatibleTextRendering = 
+build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = JM_RESPALDA
-build_property.ProjectDir = E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\
+build_property.ProjectDir = C:\Users\eramo\source\repos\ObjectDetection\JM-RESPALDA\JM-RESPALDA\
