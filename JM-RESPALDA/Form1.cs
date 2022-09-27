@@ -47,9 +47,11 @@ namespace JM_RESPALDA
             dataGridView1.DataMember = "BackUp";
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Uighur", 18F, FontStyle.Regular);
-            
+
             //_7Zip ruta7zip = new _7Zip();
             //txt_name.Text = ruta7zip.ruta7zip;
+
+            //dataGridView1.SelectedRows[0].Cells[0].Style.
         }
         private void CreaEstructuraDs()
         {
@@ -171,7 +173,7 @@ namespace JM_RESPALDA
 
             lbl_num_dia.Visible = cbxDia;
             cbx_dia.Visible = cbxDia;
-            cbx_dia.SelectedIndex = 0;
+            cbx_dia.Text = null;
 
             groupBox1.Enabled = !cbxDia;
 
@@ -194,18 +196,92 @@ namespace JM_RESPALDA
             chb_domingo.Checked = chb_domingo.Text.Contains(habilita) ? true : false;
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string ID = dataGridView1.SelectedRows[0].Cells[0].Value + string.Empty;
+                string Nombre = dataGridView1.SelectedRows[0].Cells[1].Value + string.Empty;
+                string Origen = dataGridView1.SelectedRows[0].Cells[2].Value + string.Empty;
+                string Destino = dataGridView1.SelectedRows[0].Cells[3].Value + string.Empty;
+                string Periodicidad = dataGridView1.SelectedRows[0].Cells[4].Value + string.Empty;
+                string DiaMes = dataGridView1.SelectedRows[0].Cells[5].Value + string.Empty;
+                string Lunes = dataGridView1.SelectedRows[0].Cells[6].Value + string.Empty;
+                string Martes = dataGridView1.SelectedRows[0].Cells[7].Value + string.Empty;
+                string Miercoles = dataGridView1.SelectedRows[0].Cells[8].Value + string.Empty;
+                string Jueves = dataGridView1.SelectedRows[0].Cells[9].Value + string.Empty;
+                string Viernes = dataGridView1.SelectedRows[0].Cells[10].Value + string.Empty;
+                string Sabado = dataGridView1.SelectedRows[0].Cells[11].Value + string.Empty;
+                string Domingo = dataGridView1.SelectedRows[0].Cells[12].Value + string.Empty;
+                string Hora = dataGridView1.SelectedRows[0].Cells[13].Value + string.Empty;
+
+                lbl_id.Text = ID;
+                txt_name.Text = Nombre;
+                txt_origen.Text = Origen;
+                txt_destino.Text = Destino;
+                cbx_periodicidad.Text = Periodicidad;
+                switch (Periodicidad)
+                {
+                    case "Diario":
+                        groupBox_Dias(false, true, false, true);
+                        break;
+                    case "Semanal":
+                        groupBox_Dias(true, false, false, true);
+                        break;
+                    case "Mensual":
+                        groupBox_Dias(false, false, true, true);
+                        break;
+                    case "Unica vez":
+                        groupBox_Dias(false, false, false, false);
+                        groupBox1.Enabled = false;
+                        break;
+                    case "Personalizado":
+                        groupBox_Dias(true, false, false, true);
+                        break;
+                    default:
+                        groupBox_Dias(true, false, false, false);
+                        break;
+                }
+                cbx_dia.Text = DiaMes;
+                chb_lunes.Checked = Lunes.Contains("True") ? true : false;
+                chb_martes.Checked = Martes.Contains("True") ? true : false;
+                chb_miercoles.Checked = Miercoles.Contains("True") ? true : false;
+                chb_jueves.Checked = Jueves.Contains("True") ? true : false;
+                chb_viernes.Checked = Viernes.Contains("True") ? true : false;
+                chb_sabado.Checked = Sabado.Contains("True") ? true : false;
+                chb_domingo.Checked = Domingo.Contains("True") ? true : false;
+                //HORA
+
+            }
+
+            btn_nuevo.Enabled = true;
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            int idRespaldo = dtBackUp.Rows.Count + 1, diames = int.Parse(cbx_dia.Text);
+            int idRespaldo = dtBackUp.Rows.Count + 1, diames = int.Parse(cbx_dia.Text); //try parse diames
             string nombre = txt_name.Text, origen = txt_origen.Text, destino = txt_destino.Text, periodicidad = cbx_periodicidad.Text, hora = dateTimePicker1.Text;
 
-            dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
+            if (int.Parse(lbl_id.Text) == 0) dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
+            //modificar datos de una FILA en un DATATABLE
 
             dsJMRespalda.WriteXml(xmlRespaldos);
         }
 
-        
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            lbl_id.Text = "0";
+            txt_name.Text = "";
+            txt_origen.Text = "";
+            txt_destino.Text = "";
+            cbx_periodicidad.Text = null;
+            groupBox_Dias(true, false, false, true);
+            //hora
+        }
 
+        private void btn_detener_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

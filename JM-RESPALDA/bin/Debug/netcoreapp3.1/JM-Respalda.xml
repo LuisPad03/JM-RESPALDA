@@ -48,4 +48,20 @@
     <Domingo>false</Domingo>
     <Hora>12:00:00 a. m.</Hora>
   </BackUp>
+  <BackUp>
+    <ID>4</ID>
+    <Nombre>segundo registro</Nombre>
+    <Origen>C:\Users\luis\Downloads\programas</Origen>
+    <Destino>C:\Users\luis\Downloads\programas</Destino>
+    <Periodicidad>Mensual</Periodicidad>
+    <DiaMes>5</DiaMes>
+    <Lunes>false</Lunes>
+    <Martes>false</Martes>
+    <Miercoles>false</Miercoles>
+    <Jueves>false</Jueves>
+    <Viernes>false</Viernes>
+    <Sabado>false</Sabado>
+    <Domingo>false</Domingo>
+    <Hora>12:00:00 a. m.</Hora>
+  </BackUp>
 </JM-RESPALDA>

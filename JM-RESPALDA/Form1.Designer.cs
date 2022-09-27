@@ -39,6 +39,7 @@ namespace JM_RESPALDA
             this.iconrestaurar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chb_martes = new System.Windows.Forms.CheckBox();
             this.chb_lunes = new System.Windows.Forms.CheckBox();
@@ -61,10 +62,12 @@ namespace JM_RESPALDA
             this.lbl_name = new System.Windows.Forms.Label();
             this.btn_detener = new System.Windows.Forms.Button();
             this.btn_iniciar = new System.Windows.Forms.Button();
+            this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +75,7 @@ namespace JM_RESPALDA
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -127,6 +131,7 @@ namespace JM_RESPALDA
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lbl_id);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dateTimePicker1);
             this.panel3.Controls.Add(this.cbx_dia);
@@ -142,12 +147,23 @@ namespace JM_RESPALDA
             this.panel3.Controls.Add(this.lbl_name);
             this.panel3.Controls.Add(this.btn_detener);
             this.panel3.Controls.Add(this.btn_iniciar);
+            this.panel3.Controls.Add(this.btn_nuevo);
             this.panel3.Controls.Add(this.btn_guardar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(315, 42);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(371, 295);
             this.panel3.TabIndex = 1;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Microsoft Uighur", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_id.Location = new System.Drawing.Point(325, 10);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(19, 28);
+            this.lbl_id.TabIndex = 10;
+            this.lbl_id.Text = "0";
             // 
             // groupBox1
             // 
@@ -381,7 +397,7 @@ namespace JM_RESPALDA
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_name.Location = new System.Drawing.Point(85, 13);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(262, 20);
+            this.txt_name.Size = new System.Drawing.Size(234, 20);
             this.txt_name.TabIndex = 1;
             // 
             // lbl_origen
@@ -409,12 +425,13 @@ namespace JM_RESPALDA
             this.btn_detener.Enabled = false;
             this.btn_detener.FlatAppearance.BorderSize = 0;
             this.btn_detener.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_detener.Location = new System.Drawing.Point(270, 262);
+            this.btn_detener.Location = new System.Drawing.Point(272, 262);
             this.btn_detener.Name = "btn_detener";
             this.btn_detener.Size = new System.Drawing.Size(75, 23);
             this.btn_detener.TabIndex = 9;
             this.btn_detener.Text = "Detener";
             this.btn_detener.UseVisualStyleBackColor = false;
+            this.btn_detener.Click += new System.EventHandler(this.btn_detener_Click);
             // 
             // btn_iniciar
             // 
@@ -422,12 +439,26 @@ namespace JM_RESPALDA
             this.btn_iniciar.Enabled = false;
             this.btn_iniciar.FlatAppearance.BorderSize = 0;
             this.btn_iniciar.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_iniciar.Location = new System.Drawing.Point(189, 262);
+            this.btn_iniciar.Location = new System.Drawing.Point(192, 262);
             this.btn_iniciar.Name = "btn_iniciar";
             this.btn_iniciar.Size = new System.Drawing.Size(75, 23);
             this.btn_iniciar.TabIndex = 8;
             this.btn_iniciar.Text = "Iniciar";
             this.btn_iniciar.UseVisualStyleBackColor = false;
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btn_nuevo.Enabled = false;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_nuevo.Location = new System.Drawing.Point(18, 262);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(75, 23);
+            this.btn_nuevo.TabIndex = 7;
+            this.btn_nuevo.Text = "Nuevo";
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // btn_guardar
             // 
@@ -435,7 +466,7 @@ namespace JM_RESPALDA
             this.btn_guardar.Enabled = false;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_guardar.Location = new System.Drawing.Point(108, 262);
+            this.btn_guardar.Location = new System.Drawing.Point(99, 262);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(75, 23);
             this.btn_guardar.TabIndex = 7;
@@ -507,9 +538,10 @@ namespace JM_RESPALDA
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(292, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(299, 268);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.TabStop = false;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // notifyIcon1
             // 
@@ -545,6 +577,7 @@ namespace JM_RESPALDA
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -582,6 +615,9 @@ namespace JM_RESPALDA
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.Button btn_nuevo;
     }
 }
 
