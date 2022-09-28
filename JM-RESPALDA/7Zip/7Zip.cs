@@ -7,7 +7,7 @@ using System.Text;
 public class _7Zip
 {
     public string ruta7zip = "";
-    public string error = string.Empty;
+    public string error = "";
 
     public _7Zip()
     {
@@ -34,22 +34,40 @@ public class _7Zip
 
     public bool ComprimeCarpeta(string carpetaComprimir, string carpetaDestino, int nivelCompresion)
     {
-        
         try
-        {            
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = ruta7zip;  /*Ruta del .exe del 7zip C:\Program Files\7-Zip\7z.exe*/
-            p.Arguments = "a -t7z \"" + carpetaDestino + "\" \"" + carpetaComprimir + "\" -mx=" + nivelCompresion.ToString(); /*-mx="nivel de compresion"*/
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process x = Process.Start(p);
-            x.WaitForExit();
+        {
+            if (Directory.Exists(carpetaComprimir) && Directory.Exists(carpetaDestino))
+            {
+                DateTime todaysdate;
+                todaysdate = DateTime.Now;
+                string zipName = "BackUp" + "-" + todaysdate.Year.ToString() + "-"
+                   + todaysdate.Month.ToString() + "-" + todaysdate.Day.ToString() + "_"
+                   + todaysdate.Hour.ToString() + "-"
+                   + todaysdate.Minute.ToString() + "-"
+                   + todaysdate.Second.ToString() + ".zip";
 
-            return true;
+                ProcessStartInfo p = new ProcessStartInfo();
+                p.FileName = ruta7zip;  /*Ruta del .exe del 7zip C:\Program Files\7-Zip\7z.exe*/
+                p.Arguments = "a -t7z \"" + carpetaDestino + "\\" + zipName + "\" \"" + carpetaComprimir + "\" -mx=" + nivelCompresion.ToString(); /*-mx="nivel de compresion"*/
+                p.WindowStyle = ProcessWindowStyle.Hidden;
+                Process x = Process.Start(p);
+                x.WaitForExit();
+
+                return true;
+            }
+            else 
+            {
+                error = "Ruta(s) no encontrada(s):";
+                error = !Directory.Exists(carpetaComprimir) ? error + "\n\n" + carpetaComprimir : error + "";
+                error = !Directory.Exists(carpetaDestino) ? error + "\n\n" + carpetaDestino : error;
+                
+                return false;
+            }
         }
         catch (Exception e)
         {
-            return false;
             error = e.Message;
+            return false;
         }
         
     }
@@ -58,19 +76,39 @@ public class _7Zip
     {
         try
         {
-            ProcessStartInfo p = new ProcessStartInfo();
-            p.FileName = ruta7zip;  /*Ruta del .exe del 7zip C:\Program Files\7-Zip\7z.exe*/
-            p.Arguments = "a -tgzip \"" + archivoDestino + "\" \"" + archivoComprimir + "\" -mx=" + nivelCompresion.ToString(); /*-mx="nivel de compresion"*/
-            p.WindowStyle = ProcessWindowStyle.Hidden;
-            Process x = Process.Start(p);
-            x.WaitForExit();
+            if (File.Exists(archivoComprimir) && File.Exists(archivoDestino))
+            {
+                DateTime todaysdate;
+                todaysdate = DateTime.Now;
+                string zipName = "BackUp" + "-" + todaysdate.Year.ToString() + "-"
+                   + todaysdate.Month.ToString() + "-" + todaysdate.Day.ToString() + "_"
+                   + todaysdate.Hour.ToString() + "-"
+                   + todaysdate.Minute.ToString() + "-"
+                   + todaysdate.Second.ToString() + ".zip";
 
-            return true;
+                ProcessStartInfo p = new ProcessStartInfo();
+                p.FileName = ruta7zip;  /*Ruta del .exe del 7zip C:\Program Files\7-Zip\7z.exe*/
+                p.Arguments = "a -tgzip \"" + archivoDestino + "\\" + zipName + "\" \"" + archivoComprimir + "\" -mx=" + nivelCompresion.ToString(); /*-mx="nivel de compresion"*/
+                p.WindowStyle = ProcessWindowStyle.Hidden;
+                Process x = Process.Start(p);
+                x.WaitForExit();
+
+                return true;
+            }
+            else
+            {
+                error = "Ruta(s) no encontrada(s):";
+                error = !File.Exists(archivoComprimir) ? error + "\n\n" + archivoComprimir : error + "";
+                error = !File.Exists(archivoDestino) ? error + "\n\n" + archivoDestino : error;
+
+                return false;
+            }
+            
         }
         catch (Exception e)
         {
-            return false;
             error = e.Message;
+            return false;
         }
 
     }
@@ -94,8 +132,8 @@ public class _7Zip
         }
         catch (Exception e)
         {
-            return false;
             error = e.Message;
+            return false;
         }
     }
 

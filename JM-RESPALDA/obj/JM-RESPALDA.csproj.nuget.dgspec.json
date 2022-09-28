@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eramo\\source\\repos\\ObjectDetection\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {}
+    "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eramo\\source\\repos\\ObjectDetection\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {
+    "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eramo\\source\\repos\\ObjectDetection\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
+        "projectUniqueName": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
         "projectName": "JM-RESPALDA",
-        "projectPath": "C:\\Users\\eramo\\source\\repos\\ObjectDetection\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
-        "packagesPath": "C:\\Users\\eramo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eramo\\source\\repos\\ObjectDetection\\JM-RESPALDA\\JM-RESPALDA\\obj\\",
+        "projectPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
+        "packagesPath": "C:\\Users\\luis\\.nuget\\packages\\",
+        "outputPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\eramo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -28,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -121,10 +121,16 @@
   <data name="image_2022_09_22T02_18_57_849Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_2022_09_22T02_18_57_849Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="luna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\luna1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="disco-duro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disco-duro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restaurar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restaurar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

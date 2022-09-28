@@ -39,6 +39,8 @@ namespace JM_RESPALDA
             this.iconrestaurar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.img_noche = new System.Windows.Forms.PictureBox();
+            this.img_dia = new System.Windows.Forms.PictureBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chb_martes = new System.Windows.Forms.CheckBox();
@@ -48,9 +50,12 @@ namespace JM_RESPALDA
             this.chb_jueves = new System.Windows.Forms.CheckBox();
             this.chb_sabado = new System.Windows.Forms.CheckBox();
             this.chb_viernes = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbx_minuto = new System.Windows.Forms.ComboBox();
+            this.cbx_hora = new System.Windows.Forms.ComboBox();
             this.cbx_dia = new System.Windows.Forms.ComboBox();
             this.cbx_periodicidad = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_num_dia = new System.Windows.Forms.Label();
             this.lbl_periodicidad = new System.Windows.Forms.Label();
@@ -60,22 +65,22 @@ namespace JM_RESPALDA
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_origen = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
-            this.btn_detener = new System.Windows.Forms.Button();
+            this.btn_borrar = new System.Windows.Forms.Button();
             this.btn_iniciar = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_noche)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_dia)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTitulo
@@ -131,11 +136,16 @@ namespace JM_RESPALDA
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.img_noche);
+            this.panel3.Controls.Add(this.img_dia);
             this.panel3.Controls.Add(this.lbl_id);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.cbx_minuto);
+            this.panel3.Controls.Add(this.cbx_hora);
             this.panel3.Controls.Add(this.cbx_dia);
             this.panel3.Controls.Add(this.cbx_periodicidad);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lbl_hora);
             this.panel3.Controls.Add(this.lbl_num_dia);
             this.panel3.Controls.Add(this.lbl_periodicidad);
@@ -145,7 +155,7 @@ namespace JM_RESPALDA
             this.panel3.Controls.Add(this.txt_name);
             this.panel3.Controls.Add(this.lbl_origen);
             this.panel3.Controls.Add(this.lbl_name);
-            this.panel3.Controls.Add(this.btn_detener);
+            this.panel3.Controls.Add(this.btn_borrar);
             this.panel3.Controls.Add(this.btn_iniciar);
             this.panel3.Controls.Add(this.btn_nuevo);
             this.panel3.Controls.Add(this.btn_guardar);
@@ -154,6 +164,28 @@ namespace JM_RESPALDA
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(371, 295);
             this.panel3.TabIndex = 1;
+            // 
+            // img_noche
+            // 
+            this.img_noche.Image = global::JM_RESPALDA.Properties.Resources.luna;
+            this.img_noche.Location = new System.Drawing.Point(302, 224);
+            this.img_noche.Name = "img_noche";
+            this.img_noche.Size = new System.Drawing.Size(35, 35);
+            this.img_noche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_noche.TabIndex = 11;
+            this.img_noche.TabStop = false;
+            this.img_noche.Visible = false;
+            // 
+            // img_dia
+            // 
+            this.img_dia.Image = global::JM_RESPALDA.Properties.Resources.sol;
+            this.img_dia.Location = new System.Drawing.Point(302, 224);
+            this.img_dia.Name = "img_dia";
+            this.img_dia.Size = new System.Drawing.Size(35, 35);
+            this.img_dia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_dia.TabIndex = 11;
+            this.img_dia.TabStop = false;
+            this.img_dia.Visible = false;
             // 
             // lbl_id
             // 
@@ -260,16 +292,58 @@ namespace JM_RESPALDA
             this.chb_viernes.UseVisualStyleBackColor = true;
             this.chb_viernes.Click += new System.EventHandler(this.checkBox_Click);
             // 
-            // dateTimePicker1
+            // cbx_minuto
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(70, 229);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 8, 21, 0, 0, 0, 0);
+            this.cbx_minuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_minuto.Font = new System.Drawing.Font("Microsoft Himalaya", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_minuto.FormattingEnabled = true;
+            this.cbx_minuto.IntegralHeight = false;
+            this.cbx_minuto.Items.AddRange(new object[] {
+            "00",
+            "15",
+            "30",
+            "45"});
+            this.cbx_minuto.Location = new System.Drawing.Point(120, 226);
+            this.cbx_minuto.Name = "cbx_minuto";
+            this.cbx_minuto.Size = new System.Drawing.Size(43, 28);
+            this.cbx_minuto.TabIndex = 5;
+            // 
+            // cbx_hora
+            // 
+            this.cbx_hora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_hora.Font = new System.Drawing.Font("Microsoft Himalaya", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_hora.FormattingEnabled = true;
+            this.cbx_hora.IntegralHeight = false;
+            this.cbx_hora.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.cbx_hora.Location = new System.Drawing.Point(65, 226);
+            this.cbx_hora.Name = "cbx_hora";
+            this.cbx_hora.Size = new System.Drawing.Size(43, 28);
+            this.cbx_hora.TabIndex = 5;
+            this.cbx_hora.SelectionChangeCommitted += new System.EventHandler(this.cbx_hora_SelectionChangeCommitted);
             // 
             // cbx_dia
             // 
@@ -333,6 +407,27 @@ namespace JM_RESPALDA
             this.cbx_periodicidad.Size = new System.Drawing.Size(101, 29);
             this.cbx_periodicidad.TabIndex = 4;
             this.cbx_periodicidad.SelectionChangeCommitted += new System.EventHandler(this.cbx_periodicidad_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(105, 223);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 34);
+            this.label1.TabIndex = 7;
+            this.label1.Text = ":";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Uighur", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label2.Location = new System.Drawing.Point(172, 230);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 28);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Formato 24 hrs";
             // 
             // lbl_hora
             // 
@@ -420,31 +515,31 @@ namespace JM_RESPALDA
             this.lbl_name.TabIndex = 1;
             this.lbl_name.Text = "Nombre:";
             // 
-            // btn_detener
+            // btn_borrar
             // 
-            this.btn_detener.Enabled = false;
-            this.btn_detener.FlatAppearance.BorderSize = 0;
-            this.btn_detener.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_detener.Location = new System.Drawing.Point(272, 262);
-            this.btn_detener.Name = "btn_detener";
-            this.btn_detener.Size = new System.Drawing.Size(75, 23);
-            this.btn_detener.TabIndex = 9;
-            this.btn_detener.Text = "Detener";
-            this.btn_detener.UseVisualStyleBackColor = false;
-            this.btn_detener.Click += new System.EventHandler(this.btn_detener_Click);
+            this.btn_borrar.Enabled = false;
+            this.btn_borrar.FlatAppearance.BorderSize = 0;
+            this.btn_borrar.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_borrar.Location = new System.Drawing.Point(289, 262);
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Size = new System.Drawing.Size(58, 23);
+            this.btn_borrar.TabIndex = 9;
+            this.btn_borrar.Text = "Borrar";
+            this.btn_borrar.UseVisualStyleBackColor = false;
             // 
             // btn_iniciar
             // 
             this.btn_iniciar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_iniciar.Enabled = false;
             this.btn_iniciar.FlatAppearance.BorderSize = 0;
             this.btn_iniciar.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_iniciar.Location = new System.Drawing.Point(192, 262);
+            this.btn_iniciar.Location = new System.Drawing.Point(216, 262);
             this.btn_iniciar.Name = "btn_iniciar";
-            this.btn_iniciar.Size = new System.Drawing.Size(75, 23);
+            this.btn_iniciar.Size = new System.Drawing.Size(64, 23);
             this.btn_iniciar.TabIndex = 8;
             this.btn_iniciar.Text = "Iniciar";
             this.btn_iniciar.UseVisualStyleBackColor = false;
+            this.btn_iniciar.Visible = false;
+            this.btn_iniciar.Click += new System.EventHandler(this.btn_iniciar_Click);
             // 
             // btn_nuevo
             // 
@@ -454,7 +549,7 @@ namespace JM_RESPALDA
             this.btn_nuevo.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_nuevo.Location = new System.Drawing.Point(18, 262);
             this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(75, 23);
+            this.btn_nuevo.Size = new System.Drawing.Size(58, 23);
             this.btn_nuevo.TabIndex = 7;
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.UseVisualStyleBackColor = false;
@@ -466,9 +561,9 @@ namespace JM_RESPALDA
             this.btn_guardar.Enabled = false;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_guardar.Location = new System.Drawing.Point(99, 262);
+            this.btn_guardar.Location = new System.Drawing.Point(81, 262);
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_guardar.Size = new System.Drawing.Size(60, 23);
             this.btn_guardar.TabIndex = 7;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.UseVisualStyleBackColor = false;
@@ -573,11 +668,12 @@ namespace JM_RESPALDA
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_noche)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_dia)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,7 +693,7 @@ namespace JM_RESPALDA
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label lbl_origen;
         private System.Windows.Forms.Label lbl_name;
-        private System.Windows.Forms.Button btn_detener;
+        private System.Windows.Forms.Button btn_borrar;
         private System.Windows.Forms.Button btn_iniciar;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.CheckBox chb_domingo;
@@ -611,13 +707,17 @@ namespace JM_RESPALDA
         private System.Windows.Forms.TextBox txt_origen;
         private System.Windows.Forms.ComboBox cbx_dia;
         private System.Windows.Forms.ComboBox cbx_periodicidad;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Button btn_nuevo;
+        private System.Windows.Forms.ComboBox cbx_minuto;
+        private System.Windows.Forms.ComboBox cbx_hora;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox img_dia;
+        private System.Windows.Forms.PictureBox img_noche;
     }
 }
 

@@ -23,6 +23,7 @@ namespace JM_RESPALDA
         private DataSet dsJMRespalda = new DataSet();
         private DataTable dtBackUp = new DataTable();
         private readonly string xmlRespaldos = "JM-Respalda.xml";
+        private readonly string[] sColumnas = { "Nombre", "Origen", "Destino", "Periodicidad", "DiaMes", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo", "Hora" };
 
         string archivoip = Application.StartupPath + "\\GuardaIP.txt";
         string archivoxml2 = Application.StartupPath + "\\MDatos.xml";
@@ -48,10 +49,8 @@ namespace JM_RESPALDA
 
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Uighur", 18F, FontStyle.Regular);
 
-            //_7Zip ruta7zip = new _7Zip();
-            //txt_name.Text = ruta7zip.ruta7zip;
-
-            //dataGridView1.SelectedRows[0].Cells[0].Style.
+            cbx_hora.SelectedIndex = 0;
+            cbx_minuto.SelectedIndex = 0;
         }
         private void CreaEstructuraDs()
         {
@@ -130,27 +129,34 @@ namespace JM_RESPALDA
         }
 
         private void cbx_periodicidad_SelectionChangeCommitted(object sender, EventArgs e)
-        {            
+        {
             switch (cbx_periodicidad.Text)
             {
                 case "Diario":
                     groupBox_Dias(false, true, false, true);
+                    btn_iniciar.Visible = false;
                     break;
                 case "Semanal":
                     groupBox_Dias(true, false, false, true);
+                    chb_lunes.Checked = true;
+                    btn_iniciar.Visible = false;
                     break;
                 case "Mensual":
                     groupBox_Dias(false, false, true, true);
+                    btn_iniciar.Visible = false;
                     break;
                 case "Unica vez":
                     groupBox_Dias(false, false, false, false);
                     groupBox1.Enabled = false;
+                    btn_iniciar.Visible = true;
                     break;
                 case "Personalizado":
                     groupBox_Dias(true, false, false, true);
+                    btn_iniciar.Visible = false;
                     break;
                 default:
                     groupBox_Dias(true, false, false, false);
+                    btn_iniciar.Visible = false;
                     break;
             }
         }
@@ -234,43 +240,64 @@ namespace JM_RESPALDA
                         break;
                 }
                 cbx_dia.Text = datosFila[5];
-                chb_lunes.Checked = datosFila[6].Contains("True") ? true : false;
-                chb_martes.Checked = datosFila[7].Contains("True") ? true : false;
-                chb_miercoles.Checked = datosFila[8].Contains("True") ? true : false;
-                chb_jueves.Checked = datosFila[9].Contains("True") ? true : false;
-                chb_viernes.Checked = datosFila[10].Contains("True") ? true : false;
-                chb_sabado.Checked = datosFila[11].Contains("True") ? true : false;
-                chb_domingo.Checked = datosFila[12].Contains("True") ? true : false;
-                //HORA
+                chb_lunes.Checked = datosFila[6].ToLower().Contains("true") ? true : false;
+                chb_martes.Checked = datosFila[7].ToLower().Contains("true") ? true : false;
+                chb_miercoles.Checked = datosFila[8].ToLower().Contains("true") ? true : false;
+                chb_jueves.Checked = datosFila[9].ToLower().Contains("true") ? true : false;
+                chb_viernes.Checked = datosFila[10].ToLower().Contains("true") ? true : false;
+                chb_sabado.Checked = datosFila[11].ToLower().Contains("true") ? true : false;
+                chb_domingo.Checked = datosFila[12].ToLower().Contains("true") ? true : false;
+                cbx_hora.Text = datosFila[13].Substring(0,2);
+                cbx_minuto.Text = datosFila[13].Substring(3, 2);
 
             }
 
             btn_nuevo.Enabled = true;
+            btn_borrar.Enabled = true;
         }
         
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             int idRespaldo = dtBackUp.Rows.Count + 1;
-            int diames; //try parse diames
+            int diames; 
             bool bDiaMes = int.TryParse(cbx_dia.Text, out diames);
+            bool enviaMensaje = false;
+            string mensaje = "";
 
-            string nombre = txt_name.Text, origen = txt_origen.Text, destino = txt_destino.Text, periodicidad = cbx_periodicidad.Text, hora = dateTimePicker1.Text;
+            string nombre = txt_name.Text, origen = txt_origen.Text, destino = txt_destino.Text, periodicidad = cbx_periodicidad.Text, hora = cbx_hora.Text + ":" + cbx_minuto.Text;
 
-            if (int.Parse(lbl_id.Text) == 0) dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
-            //modificar datos de una FILA en un DATATABLE
-            else
+            if (nombre != "" && origen != "" && destino != "" && origen != destino)
             {
-                string[] sColumnas = { "Nombre", "Origen", "Destino", "Periodicidad", "DiaMes", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo", "Hora" };
-                string[] vColumnas = {nombre, origen, destino, periodicidad, diames.ToString(), chb_lunes.Checked.ToString(), chb_martes.Checked.ToString(), chb_miercoles.Checked.ToString(), chb_jueves.Checked.ToString(), chb_viernes.Checked.ToString(), chb_sabado.Checked.ToString(), chb_domingo.Checked.ToString(), hora };
-
-                idRespaldo = int.Parse(lbl_id.Text);
-                for (int i = 0; i < sColumnas.Length; i++)
+                if (periodicidad == "Mensual" && diames==0)
                 {
-                    dtBackUp.Rows[idRespaldo - 1][sColumnas[i]] = vColumnas[i];
+                    enviaMensaje = true;
+                    mensaje = "Favor de elegir el día del mes.";
                 }
-            }
+                if (periodicidad == "Personalizado" && !chb_lunes.Checked && !chb_martes.Checked && !chb_miercoles.Checked && !chb_jueves.Checked && !chb_viernes.Checked && !chb_sabado.Checked && !chb_domingo.Checked)
+                {
+                    enviaMensaje = true;
+                    mensaje = "Favor de elegir almenos un día de la semana.";
+                }
+                if (!enviaMensaje)
+                {
+                    if (int.Parse(lbl_id.Text) == 0) dtBackUp.Rows.Add(idRespaldo, nombre, origen, destino, periodicidad, diames, chb_lunes.Checked, chb_martes.Checked, chb_miercoles.Checked, chb_jueves.Checked, chb_viernes.Checked, chb_sabado.Checked, chb_domingo.Checked, hora);
+                    else
+                    {
+                        string[] vColumnas = { nombre, origen, destino, periodicidad, diames.ToString(), chb_lunes.Checked.ToString(), chb_martes.Checked.ToString(), chb_miercoles.Checked.ToString(), chb_jueves.Checked.ToString(), chb_viernes.Checked.ToString(), chb_sabado.Checked.ToString(), chb_domingo.Checked.ToString(), hora };
 
-            dsJMRespalda.WriteXml(xmlRespaldos);
+                        idRespaldo = int.Parse(lbl_id.Text);
+                        for (int i = 0; i < sColumnas.Length; i++)
+                        {
+                            dtBackUp.Rows[idRespaldo - 1][sColumnas[i]] = vColumnas[i];
+                        }
+                    }
+                    dsJMRespalda.WriteXml(xmlRespaldos);
+                }
+                else MessageBox.Show(mensaje);
+            }
+            else if (origen == destino && origen != "" && destino != "" && nombre.Trim() != "") MessageBox.Show("Origen y Destino tienen que ser diferentes.");
+            else MessageBox.Show("Favor de llenar todos los campos.");
+
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -281,12 +308,32 @@ namespace JM_RESPALDA
             txt_destino.Text = "";
             cbx_periodicidad.Text = null;
             groupBox_Dias(true, false, false, true);
-            //hora
+            cbx_hora.SelectedIndex = 0;
+            cbx_minuto.SelectedIndex = 0;
+            btn_borrar.Enabled = false;
         }
 
-        private void btn_detener_Click(object sender, EventArgs e)
+        private void btn_iniciar_Click(object sender, EventArgs e)
         {
+            _7Zip comprime7zip = new _7Zip();
+            if (comprime7zip.ComprimeCarpeta(txt_origen.Text, txt_destino.Text, 0)) MessageBox.Show("Exitasooooooo perroooos");
+            else MessageBox.Show("Hechale GANITAS \n\n Error:\n" + comprime7zip.error);
+        }
 
+        private void cbx_hora_SelectionChangeCommitted(object sender, EventArgs e)
+        {            
+            if (int.Parse(cbx_hora.Text)>18 || int.Parse(cbx_hora.Text) < 8)
+            {
+                img_noche.Visible = true;
+                img_dia.Visible = false;
+                //panel3.BackColor = Color.SteelBlue;
+            }
+            else
+            {
+                img_noche.Visible = false;
+                img_dia.Visible = true;
+                panel3.BackColor = Color.White;
+            }
         }
     }
 }

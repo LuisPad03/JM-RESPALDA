@@ -83,9 +83,29 @@ namespace JM_RESPALDA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap luna {
+            get {
+                object obj = ResourceManager.GetObject("luna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restaurar {
             get {
                 object obj = ResourceManager.GetObject("restaurar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sol {
+            get {
+                object obj = ResourceManager.GetObject("sol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
