@@ -1,8 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "Pp89zEUpasNNmOajZHiEpaFR/7eq3NOF8Ys8S7SQeUKKkSGyTrpt/mIl02RPMQ8zurHJNTitXQqhUll0BLEzZg==",
+  "dgSpecHash": "N7xsQrsYrFtMinP7yMgTzx2yjZnG517olPi7D2Yaq77UogdMGsVovNBArKoU+Nt3ciW84v5XMQYgvIQ2Ql4G1g==",
   "success": true,
   "projectFilePath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\luis\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\system.diagnostics.eventlog\\5.0.0\\system.diagnostics.eventlog.5.0.0.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\taskscheduler\\2.10.1\\taskscheduler.2.10.1.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\taskschedulereditor\\2.10.1\\taskschedulereditor.2.10.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"TaskSchedulerEditor 2.10.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "TaskSchedulerEditor",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

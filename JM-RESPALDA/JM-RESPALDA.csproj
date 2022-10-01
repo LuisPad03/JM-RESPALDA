@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="TaskScheduler" Version="2.10.1" />
+    <PackageReference Include="TaskSchedulerEditor" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TaskScheduler">
+      <HintPath>C:\Users\luis\Downloads\TSNewLib_lib\TaskScheduler Library &amp; Doc\TaskScheduler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
