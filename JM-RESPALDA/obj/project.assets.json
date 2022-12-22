@@ -2,6 +2,58 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AeroWizard/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/AeroWizard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/AeroWizard.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/net45/de/AeroWizard.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net45/es/AeroWizard.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net45/fr/AeroWizard.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net45/it/AeroWizard.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net45/pl/AeroWizard.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net45/ru/AeroWizard.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net45/zh-CN/AeroWizard.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net45/zh-Hant/AeroWizard.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "GroupControls/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/GroupControls.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/GroupControls.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -18,10 +70,14 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -38,10 +94,14 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/System.Diagnostics.EventLog.dll": {}
+          "ref/netstandard2.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Diagnostics.EventLog.dll": {}
+          "lib/netstandard2.0/System.Diagnostics.EventLog.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Diagnostics.EventLog.dll": {
@@ -57,10 +117,14 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -72,10 +136,14 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -96,10 +164,14 @@
           "System.Security.AccessControl": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll": {}
+          "lib/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll": {}
+          "lib/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/netcoreapp3.1/de/Microsoft.Win32.TaskScheduler.resources.dll": {
@@ -130,11 +202,22 @@
       },
       "TaskSchedulerEditor/2.10.1": {
         "type": "package",
+        "dependencies": {
+          "AeroWizard": "2.3.1",
+          "GroupControls": "1.9.0",
+          "TaskScheduler": "2.10.1",
+          "TimeSpan2": "2.4.2",
+          "Tulpep.ActiveDirectoryObjectPicker": "3.0.11"
+        },
         "compile": {
-          "lib/net452/Microsoft.Win32.TaskSchedulerEditor.dll": {}
+          "lib/net452/Microsoft.Win32.TaskSchedulerEditor.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net452/Microsoft.Win32.TaskSchedulerEditor.dll": {}
+          "lib/net452/Microsoft.Win32.TaskSchedulerEditor.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/net452/de/Microsoft.Win32.TaskSchedulerEditor.resources.dll": {
@@ -162,10 +245,197 @@
             "locale": "zh-Hant"
           }
         }
+      },
+      "TimeSpan2/2.4.2": {
+        "type": "package",
+        "dependencies": {
+          "TimeSpan2.Core": "2.4.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/TimeSpan2.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/TimeSpan2.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "TimeSpan2.Core/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/TimeSpan2.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/TimeSpan2.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netcoreapp3.1/ar/TimeSpan2.Core.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.1/da/TimeSpan2.Core.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.1/de/TimeSpan2.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.1/es/TimeSpan2.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.1/fr/TimeSpan2.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.1/it/TimeSpan2.Core.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.1/ko/TimeSpan2.Core.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.1/nl/TimeSpan2.Core.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.1/pl/TimeSpan2.Core.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.1/pt/TimeSpan2.Core.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.1/ru/TimeSpan2.Core.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.1/se/TimeSpan2.Core.resources.dll": {
+            "locale": "se"
+          },
+          "lib/netcoreapp3.1/zh-CN/TimeSpan2.Core.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/netcoreapp3.1/zh-Hant/TimeSpan2.Core.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Tulpep.ActiveDirectoryObjectPicker/3.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/ActiveDirectoryObjectPicker.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ActiveDirectoryObjectPicker.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
   "libraries": {
+    "AeroWizard/2.3.1": {
+      "sha512": "z0UBaPIvYdJPzEzk08tmUBWIfgnB2ehQXolqH7OmGl5UR3qCe06uGPuIo666Pamomzmqmh32CZSBbkpNE3DvUQ==",
+      "type": "package",
+      "path": "aerowizard/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "WizardControlIcon48.png",
+        "aerowizard.2.3.1.nupkg.sha512",
+        "aerowizard.nuspec",
+        "lib/net20/AeroWizard.dll",
+        "lib/net20/AeroWizard.xml",
+        "lib/net20/de/AeroWizard.resources.dll",
+        "lib/net20/es/AeroWizard.resources.dll",
+        "lib/net20/fr/AeroWizard.resources.dll",
+        "lib/net20/it/AeroWizard.resources.dll",
+        "lib/net20/pl/AeroWizard.resources.dll",
+        "lib/net20/ru/AeroWizard.resources.dll",
+        "lib/net20/zh-CN/AeroWizard.resources.dll",
+        "lib/net20/zh-Hant/AeroWizard.resources.dll",
+        "lib/net35/AeroWizard.dll",
+        "lib/net35/AeroWizard.xml",
+        "lib/net35/de/AeroWizard.resources.dll",
+        "lib/net35/es/AeroWizard.resources.dll",
+        "lib/net35/fr/AeroWizard.resources.dll",
+        "lib/net35/it/AeroWizard.resources.dll",
+        "lib/net35/pl/AeroWizard.resources.dll",
+        "lib/net35/ru/AeroWizard.resources.dll",
+        "lib/net35/zh-CN/AeroWizard.resources.dll",
+        "lib/net35/zh-Hant/AeroWizard.resources.dll",
+        "lib/net40/AeroWizard.dll",
+        "lib/net40/AeroWizard.xml",
+        "lib/net40/de/AeroWizard.resources.dll",
+        "lib/net40/es/AeroWizard.resources.dll",
+        "lib/net40/fr/AeroWizard.resources.dll",
+        "lib/net40/it/AeroWizard.resources.dll",
+        "lib/net40/pl/AeroWizard.resources.dll",
+        "lib/net40/ru/AeroWizard.resources.dll",
+        "lib/net40/zh-CN/AeroWizard.resources.dll",
+        "lib/net40/zh-Hant/AeroWizard.resources.dll",
+        "lib/net45/AeroWizard.dll",
+        "lib/net45/AeroWizard.xml",
+        "lib/net45/de/AeroWizard.resources.dll",
+        "lib/net45/es/AeroWizard.resources.dll",
+        "lib/net45/fr/AeroWizard.resources.dll",
+        "lib/net45/it/AeroWizard.resources.dll",
+        "lib/net45/pl/AeroWizard.resources.dll",
+        "lib/net45/ru/AeroWizard.resources.dll",
+        "lib/net45/zh-CN/AeroWizard.resources.dll",
+        "lib/net45/zh-Hant/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/AeroWizard.dll",
+        "lib/net5.0-windows7.0/AeroWizard.xml",
+        "lib/net5.0-windows7.0/de/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/es/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/fr/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/it/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/pl/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/ru/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/zh-CN/AeroWizard.resources.dll",
+        "lib/net5.0-windows7.0/zh-Hant/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/AeroWizard.dll",
+        "lib/net6.0-windows7.0/AeroWizard.xml",
+        "lib/net6.0-windows7.0/de/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/es/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/fr/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/it/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/pl/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/ru/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/zh-CN/AeroWizard.resources.dll",
+        "lib/net6.0-windows7.0/zh-Hant/AeroWizard.resources.dll"
+      ]
+    },
+    "GroupControls/1.9.0": {
+      "sha512": "8a8+Vlh0d3lTIvTtYQxS1gy4/gkOnAXW8s93qt08Z1k0mXF+hDatOsfgtxiyhR7JG9xmtZUy2r7M8rrEZf0imA==",
+      "type": "package",
+      "path": "groupcontrols/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "groupcontrols.1.9.0.nupkg.sha512",
+        "groupcontrols.nuspec",
+        "lib/net20/GroupControls.dll",
+        "lib/net20/GroupControls.xml",
+        "lib/net35/GroupControls.dll",
+        "lib/net35/GroupControls.xml",
+        "lib/net40/GroupControls.dll",
+        "lib/net40/GroupControls.xml",
+        "lib/net45/GroupControls.dll",
+        "lib/net45/GroupControls.xml",
+        "lib/net5.0-windows7.0/GroupControls.dll",
+        "lib/net5.0-windows7.0/GroupControls.xml",
+        "lib/net6.0-windows7.0/GroupControls.dll",
+        "lib/net6.0-windows7.0/GroupControls.xml"
+      ]
+    },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
@@ -551,6 +821,207 @@
         "taskschedulereditor.nuspec",
         "tsnew48.png"
       ]
+    },
+    "TimeSpan2/2.4.2": {
+      "sha512": "uMePwECAQdMif2MqB5rkqEF2JE2bVGZFOs2Iur6WOeW9msNQceHAEZL7z333rKmmmy4Ac32fVjFUrRILGfDhvQ==",
+      "type": "package",
+      "path": "timespan2/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/TimeSpan2.dll",
+        "lib/net20/TimeSpan2.xml",
+        "lib/net35/TimeSpan2.dll",
+        "lib/net35/TimeSpan2.xml",
+        "lib/net40/TimeSpan2.dll",
+        "lib/net40/TimeSpan2.xml",
+        "lib/net45/TimeSpan2.dll",
+        "lib/net45/TimeSpan2.xml",
+        "lib/net5.0-windows7.0/TimeSpan2.dll",
+        "lib/net5.0-windows7.0/TimeSpan2.xml",
+        "lib/net6.0-windows7.0/TimeSpan2.dll",
+        "lib/net6.0-windows7.0/TimeSpan2.xml",
+        "lib/netcoreapp3.1/TimeSpan2.dll",
+        "lib/netcoreapp3.1/TimeSpan2.xml",
+        "stopwatch.png",
+        "timespan2.2.4.2.nupkg.sha512",
+        "timespan2.nuspec"
+      ]
+    },
+    "TimeSpan2.Core/2.4.2": {
+      "sha512": "syMC+rLWmqZKNc+IGIWPmkg4yaQKXNNEk0o63fwt97i5ZW/l3uSiENj+fTlKXdxoL3wXv0XzqmvWmMAJBuxoUA==",
+      "type": "package",
+      "path": "timespan2.core/2.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/TimeSpan2.Core.dll",
+        "lib/net20/TimeSpan2.Core.xml",
+        "lib/net20/ar/TimeSpan2.Core.resources.dll",
+        "lib/net20/da/TimeSpan2.Core.resources.dll",
+        "lib/net20/de/TimeSpan2.Core.resources.dll",
+        "lib/net20/es/TimeSpan2.Core.resources.dll",
+        "lib/net20/fr/TimeSpan2.Core.resources.dll",
+        "lib/net20/it/TimeSpan2.Core.resources.dll",
+        "lib/net20/ko/TimeSpan2.Core.resources.dll",
+        "lib/net20/nl/TimeSpan2.Core.resources.dll",
+        "lib/net20/pl/TimeSpan2.Core.resources.dll",
+        "lib/net20/pt/TimeSpan2.Core.resources.dll",
+        "lib/net20/ru/TimeSpan2.Core.resources.dll",
+        "lib/net20/se/TimeSpan2.Core.resources.dll",
+        "lib/net20/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net20/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/net35/TimeSpan2.Core.dll",
+        "lib/net35/TimeSpan2.Core.xml",
+        "lib/net35/ar/TimeSpan2.Core.resources.dll",
+        "lib/net35/da/TimeSpan2.Core.resources.dll",
+        "lib/net35/de/TimeSpan2.Core.resources.dll",
+        "lib/net35/es/TimeSpan2.Core.resources.dll",
+        "lib/net35/fr/TimeSpan2.Core.resources.dll",
+        "lib/net35/it/TimeSpan2.Core.resources.dll",
+        "lib/net35/ko/TimeSpan2.Core.resources.dll",
+        "lib/net35/nl/TimeSpan2.Core.resources.dll",
+        "lib/net35/pl/TimeSpan2.Core.resources.dll",
+        "lib/net35/pt/TimeSpan2.Core.resources.dll",
+        "lib/net35/ru/TimeSpan2.Core.resources.dll",
+        "lib/net35/se/TimeSpan2.Core.resources.dll",
+        "lib/net35/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net35/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/net40/TimeSpan2.Core.dll",
+        "lib/net40/TimeSpan2.Core.xml",
+        "lib/net40/ar/TimeSpan2.Core.resources.dll",
+        "lib/net40/da/TimeSpan2.Core.resources.dll",
+        "lib/net40/de/TimeSpan2.Core.resources.dll",
+        "lib/net40/es/TimeSpan2.Core.resources.dll",
+        "lib/net40/fr/TimeSpan2.Core.resources.dll",
+        "lib/net40/it/TimeSpan2.Core.resources.dll",
+        "lib/net40/ko/TimeSpan2.Core.resources.dll",
+        "lib/net40/nl/TimeSpan2.Core.resources.dll",
+        "lib/net40/pl/TimeSpan2.Core.resources.dll",
+        "lib/net40/pt/TimeSpan2.Core.resources.dll",
+        "lib/net40/ru/TimeSpan2.Core.resources.dll",
+        "lib/net40/se/TimeSpan2.Core.resources.dll",
+        "lib/net40/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net40/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/net45/TimeSpan2.Core.dll",
+        "lib/net45/TimeSpan2.Core.xml",
+        "lib/net45/ar/TimeSpan2.Core.resources.dll",
+        "lib/net45/da/TimeSpan2.Core.resources.dll",
+        "lib/net45/de/TimeSpan2.Core.resources.dll",
+        "lib/net45/es/TimeSpan2.Core.resources.dll",
+        "lib/net45/fr/TimeSpan2.Core.resources.dll",
+        "lib/net45/it/TimeSpan2.Core.resources.dll",
+        "lib/net45/ko/TimeSpan2.Core.resources.dll",
+        "lib/net45/nl/TimeSpan2.Core.resources.dll",
+        "lib/net45/pl/TimeSpan2.Core.resources.dll",
+        "lib/net45/pt/TimeSpan2.Core.resources.dll",
+        "lib/net45/ru/TimeSpan2.Core.resources.dll",
+        "lib/net45/se/TimeSpan2.Core.resources.dll",
+        "lib/net45/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net45/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/TimeSpan2.Core.dll",
+        "lib/net5.0/TimeSpan2.Core.xml",
+        "lib/net5.0/ar/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/da/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/de/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/es/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/fr/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/it/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/ko/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/nl/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/pl/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/pt/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/ru/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/se/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net5.0/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/TimeSpan2.Core.dll",
+        "lib/net6.0/TimeSpan2.Core.xml",
+        "lib/net6.0/ar/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/da/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/de/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/es/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/fr/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/it/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/ko/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/nl/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/pl/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/pt/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/ru/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/se/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/net6.0/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/TimeSpan2.Core.dll",
+        "lib/netcoreapp3.1/TimeSpan2.Core.xml",
+        "lib/netcoreapp3.1/ar/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/da/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/de/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/es/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/fr/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/it/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/ko/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/nl/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/pl/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/pt/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/ru/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/se/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/netcoreapp3.1/zh-Hant/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/TimeSpan2.Core.dll",
+        "lib/netstandard2.0/TimeSpan2.Core.xml",
+        "lib/netstandard2.0/ar/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/da/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/de/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/es/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/fr/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/it/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/ko/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/nl/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/pl/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/pt/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/ru/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/se/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/zh-CN/TimeSpan2.Core.resources.dll",
+        "lib/netstandard2.0/zh-Hant/TimeSpan2.Core.resources.dll",
+        "stopwatch.png",
+        "timespan2.core.2.4.2.nupkg.sha512",
+        "timespan2.core.nuspec"
+      ]
+    },
+    "Tulpep.ActiveDirectoryObjectPicker/3.0.11": {
+      "sha512": "Y4/Og+3Q2cdUOSOX0IO3krRXrq6DzYy9m56CpqutJ7TK8NWgwDKscINesbOxzcJlWr6VCmDzV/DkDu6NAdwJvA==",
+      "type": "package",
+      "path": "tulpep.activedirectoryobjectpicker/3.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/ActiveDirectoryObjectPicker.dll",
+        "lib/net20/ActiveDirectoryObjectPicker.xml",
+        "lib/net35/ActiveDirectoryObjectPicker.dll",
+        "lib/net35/ActiveDirectoryObjectPicker.xml",
+        "lib/net40/ActiveDirectoryObjectPicker.dll",
+        "lib/net40/ActiveDirectoryObjectPicker.xml",
+        "lib/net45/ActiveDirectoryObjectPicker.dll",
+        "lib/net45/ActiveDirectoryObjectPicker.xml",
+        "lib/net452/ActiveDirectoryObjectPicker.dll",
+        "lib/net452/ActiveDirectoryObjectPicker.xml",
+        "lib/net462/ActiveDirectoryObjectPicker.dll",
+        "lib/net462/ActiveDirectoryObjectPicker.xml",
+        "lib/net472/ActiveDirectoryObjectPicker.dll",
+        "lib/net472/ActiveDirectoryObjectPicker.xml",
+        "lib/net48/ActiveDirectoryObjectPicker.dll",
+        "lib/net48/ActiveDirectoryObjectPicker.xml",
+        "lib/net5.0-windows7.0/ActiveDirectoryObjectPicker.dll",
+        "lib/net5.0-windows7.0/ActiveDirectoryObjectPicker.xml",
+        "lib/net6.0-windows7.0/ActiveDirectoryObjectPicker.dll",
+        "lib/net6.0-windows7.0/ActiveDirectoryObjectPicker.xml",
+        "lib/netcoreapp3.0/ActiveDirectoryObjectPicker.dll",
+        "lib/netcoreapp3.0/ActiveDirectoryObjectPicker.xml",
+        "lib/netcoreapp3.1/ActiveDirectoryObjectPicker.dll",
+        "lib/netcoreapp3.1/ActiveDirectoryObjectPicker.xml",
+        "tulpep.activedirectoryobjectpicker.3.0.11.nupkg.sha512",
+        "tulpep.activedirectoryobjectpicker.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -560,9 +1031,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luis\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\luisp\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -570,18 +1040,16 @@
       "projectUniqueName": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
       "projectName": "JM-RESPALDA",
       "projectPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
-      "packagesPath": "C:\\Users\\luis\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\luisp\\.nuget\\packages\\",
       "outputPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\luisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -622,7 +1090,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -634,7 +1103,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -643,7 +1112,27 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"TaskSchedulerEditor 2.10.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AeroWizard 2.3.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "AeroWizard",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"GroupControls 1.9.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "GroupControls",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"TaskSchedulerEditor 2.10.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "TaskSchedulerEditor",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
