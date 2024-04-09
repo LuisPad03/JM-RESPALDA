@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JM-RESPALDA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1b6c31c6515a368e2cc09d2befd33ca048cbd9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("JM-RESPALDA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JM-RESPALDA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

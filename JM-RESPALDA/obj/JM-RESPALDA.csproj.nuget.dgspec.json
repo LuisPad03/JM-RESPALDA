@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {}
+    "E:\\GitHub\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {}
   },
   "projects": {
-    "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {
+    "E:\\GitHub\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
+        "projectUniqueName": "E:\\GitHub\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
         "projectName": "JM-RESPALDA",
-        "projectPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
+        "projectPath": "E:\\GitHub\\JM-RESPALDA\\JM-RESPALDA\\JM-RESPALDA.csproj",
         "packagesPath": "C:\\Users\\luisp\\.nuget\\packages\\",
-        "outputPath": "E:\\Source\\Repos\\JM-RESPALDA\\JM-RESPALDA\\obj\\",
+        "outputPath": "E:\\GitHub\\JM-RESPALDA\\JM-RESPALDA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -73,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

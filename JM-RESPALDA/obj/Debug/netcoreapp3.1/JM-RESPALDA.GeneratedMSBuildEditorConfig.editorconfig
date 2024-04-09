@@ -6,4 +6,6 @@ build_property.ApplicationHighDpiMode =
 build_property.ApplicationUseCompatibleTextRendering = 
 build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = JM_RESPALDA
-build_property.ProjectDir = E:\Source\Repos\JM-RESPALDA\JM-RESPALDA\
+build_property.ProjectDir = E:\GitHub\JM-RESPALDA\JM-RESPALDA\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
